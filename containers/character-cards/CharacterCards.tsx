@@ -30,11 +30,7 @@ const CharacterCards = () => {
 
   return (
     <>
-      <ul
-        className={styles["character-cards"]}
-        ref={ref}
-        onScroll={() => console.log("test")}
-      >
+      <ul className={styles["character-cards"]} ref={ref}>
         {characterList.map((character) => (
           <Link key={character.id} href={`/character/${character.id}`}>
             <a>
