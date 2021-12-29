@@ -1,0 +1,17 @@
+.main {
+  background: radial-gradient(ellipse at top, #263546 0%, #141622 100%);
+  padding: 16px;
+  min-height: calc(100vh - 60px);
+}
+
+.nav {
+  background: radial-gradient(ellipse at bottom, #263546 0%, #141622 100%);
+  padding: 8px;
+  height:60px;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
