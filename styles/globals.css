@@ -1,9 +1,17 @@
+@font-face {
+  font-family: WubbaLubbaDubDub;
+  src: url("/WubbaLubbaDubDub.otf") format("opentype");
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+
+  color: #42b4ca;
+  font-family: WubbaLubbaDubDub, -apple-system, BlinkMacSystemFont, Segoe UI,
+    Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+    sans-serif;
 }
 
 a {
