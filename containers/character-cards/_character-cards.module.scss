@@ -1,0 +1,8 @@
+.character-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,300px);
+  padding: 0;
+  gap:40px;
+  width: 100%;
+  justify-content: center;
+}
