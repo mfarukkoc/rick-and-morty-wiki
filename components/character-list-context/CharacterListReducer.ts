@@ -1,11 +1,13 @@
+import { CharacterListItem } from "graphql/queries/CharacterQuery";
+
 export type CharacterListAction = {
   type: "ADD_CHARACTERS";
-  characters: any[];
+  characters: CharacterListItem[];
   page: number;
 };
 
 export interface CharacterState {
-  list: any[];
+  list: CharacterListItem[];
   lastFetchedPage: number;
 }
 

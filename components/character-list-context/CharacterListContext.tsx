@@ -1,4 +1,5 @@
 import {
+  CharacterListItem,
   fetchCharacterListQuery,
   IFetchCharacterListResponse
 } from "graphql/queries/CharacterQuery";
@@ -13,8 +14,8 @@ import { useQuery } from "urql";
 import { characterListReducer } from "./CharacterListReducer";
 
 interface ICharacterListContext {
-  characterList: any[];
-  addCharacters: (characters: any[], page: number) => void;
+  characterList: CharacterListItem[];
+  addCharacters: (characters: CharacterListItem[], page: number) => void;
   lastFetchedPage: number;
 }
 
@@ -32,9 +33,12 @@ const CharacterListProvider = ({ children }: CharacterListProviderProps) => {
     lastFetchedPage: 0
   });
 
-  const addCharacters = useCallback((characters: any[], page: number) => {
-    dispatch({ type: "ADD_CHARACTERS", characters, page });
-  }, []);
+  const addCharacters = useCallback(
+    (characters: CharacterListItem[], page: number) => {
+      dispatch({ type: "ADD_CHARACTERS", characters, page });
+    },
+    []
+  );
 
   return (
     <CharacterListContext.Provider
