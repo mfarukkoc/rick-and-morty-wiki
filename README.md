@@ -1,5 +1,5 @@
 # Rick And Morty Wiki
-A demo application to get some hands-on experince on [GraphQL](https://graphql.org/), [urql](https://formidable.com/open-source/urql/) and [Next.js](https://nextjs.org/)
+A demo application that lists Rick and Morty characters to get some hands-on experience on [GraphQL](https://graphql.org/), [urql](https://formidable.com/open-source/urql/) and [Next.js](https://nextjs.org/)
 
 ## [Live Preview](https://ricknmortywiki.vercel.app/)
 
