@@ -1,0 +1,47 @@
+.character-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 2px 0 #083c32,
+    0 0 5px 3px #b3df6f,
+    0 0 10px 8px #489c55;
+
+  animation:glow 5s infinite ease-in-out;
+
+  &__image {
+    width: 100%;
+    position: relative;
+  }
+
+
+  &__info-connector {
+    width: 1px;
+    height: 20px;
+    margin:4px auto 0 auto;
+    background-color: rgba(#b3df6f,0.5);
+  }
+
+  &__info {
+    background: rgba(#041f19,0.4);
+    padding: 6px;
+    box-shadow:0 0 1px 0 #083c32,
+      0 0 2px 1px #b3df6f,
+      0 0 2px 2px #489c55;
+      
+    font-weight: 500;
+    text-align: center;
+    font-size: 24px;
+
+  }
+}
+
+
+
+@keyframes glow {
+  50% {box-shadow:0 0 2px 0 #083c32,
+      0 0 5px 6px #b3df6f,
+      0 0 10px 8px #489c55;}
+}
+
+
