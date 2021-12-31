@@ -1,5 +1,7 @@
 import CharacterDetail from "components/character-detail/CharacterDetail";
+import ErrorIndicator from "components/error-indicator/ErrorIndicator";
 import LoadingSpinner from "components/loading-spinner/LoadingSpinner";
+import { rickAndMortyURL } from "graphql/constants";
 import {
   fetchCharacterQuery,
   IFetchCharacterResponse
@@ -28,7 +30,11 @@ const Character: NextPage = () => {
   return (
     <div>
       {fetching && <LoadingSpinner />}
-      {data && <CharacterDetail character={data.character} />}
+      {data?.character ? (
+        <CharacterDetail character={data.character} id={id as string} />
+      ) : (
+        <ErrorIndicator />
+      )}
     </div>
   );
 };
@@ -37,7 +43,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const ssrCache = ssrExchange({ isClient: false });
   const client = initUrqlClient(
     {
-      url: "https://rickandmortyapi.com/graphql",
+      url: rickAndMortyURL,
       exchanges: [dedupExchange, cacheExchange, ssrCache, fetchExchange]
     },
     false
@@ -56,7 +62,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
 export default withUrqlClient(
   (_ssrExchange) => ({
-    url: "https://rickandmortyapi.com/graphql"
+    url: rickAndMortyURL
   }),
   { ssr: false }
 )(Character);

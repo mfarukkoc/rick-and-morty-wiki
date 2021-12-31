@@ -1,15 +1,29 @@
 import { memo } from "react";
 import styles from "./_character-card.module.scss";
 import Image from "next/image";
+import { motion } from "framer-motion";
+
 interface CharacterCardProps {
   name: string;
   image: string;
+  id: string;
 }
 
-const CharacterCard = ({ name, image }: CharacterCardProps) => {
+const CharacterCard = ({ name, image, id }: CharacterCardProps) => {
   return (
-    <div>
-      <div className={styles["character-card"]}>
+    <li className={styles["character-card-container"]}>
+      <motion.div
+        className={styles["character-card"]}
+        layoutId={`character-${id}`}
+        layout={"position"}
+        viewport={{ once: true }}
+        initial={{
+          opacity: 0
+        }}
+        whileInView={{
+          opacity: 1
+        }}
+      >
         <div className={styles["character-card__image"]}>
           <Image
             src={image}
@@ -20,12 +34,12 @@ const CharacterCard = ({ name, image }: CharacterCardProps) => {
             objectFit="contain"
           />
         </div>
-      </div>
+      </motion.div>
       <div className={styles["character-card__info-connector"]}></div>
       <div className={styles["character-card__info"]}>
         <div>{name}</div>
       </div>
-    </div>
+    </li>
   );
 };
 

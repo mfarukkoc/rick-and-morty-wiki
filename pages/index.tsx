@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 
 import { withUrqlClient } from "next-urql";
 import CharacterCards from "containers/character-cards/CharacterCards";
+import { rickAndMortyURL } from "graphql/constants";
 
 const Home: NextPage = () => {
   return (
@@ -13,7 +14,7 @@ const Home: NextPage = () => {
 
 export default withUrqlClient(
   (_ssrExchange) => ({
-    url: "https://rickandmortyapi.com/graphql"
+    url: rickAndMortyURL
   }),
   { ssr: true }
 )(Home);
